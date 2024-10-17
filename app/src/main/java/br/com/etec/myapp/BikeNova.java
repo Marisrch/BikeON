@@ -6,9 +6,28 @@ public class BikeNova {
 
     //construtor da classe
 
-
     public BikeNova(String titulo, int imagem) {
         this.titulo = titulo;
         this.imagem = imagem;
     }
+
+
+    //metodo de acesso get(le) e set(escreve)
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(int imagem) {
+        this.imagem = imagem;
+    }
 }
+
