@@ -2,6 +2,8 @@ package br.com.etec.myapp;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -28,10 +30,16 @@ public class RecyclerAdapterBikeNova extends RecyclerView.Adapter<RecyclerAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
         //criando variavel que ira representar o xml no java
         CardView idModeloBikeNova;
+        ImageView idModeloImagemBikeNova;
+        TextView idModeloTituloBikeNova;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //apresentando o java para o xml
+
+            idModeloBikeNova = itemView.findViewById(R.id.idModeloBikeNova);
+            idModeloImagemBikeNova = itemView.findViewById(R.id.idModeloImagemBikeNova);
+            idModeloTituloBikeNova = itemView.findViewById(R.id.idModeloTituloBikeNova);
 
 
         }
