@@ -1,5 +1,7 @@
 package br.com.etec.myapp;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -9,12 +11,31 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+import java.util.zip.Inflater;
+
 public class RecyclerAdapterBikeNova extends RecyclerView.Adapter<RecyclerAdapterBikeNova.ViewHolder> {
 
+    //cirando variaveis globais para representar a lista e o contexto
+    private Context context;
+    private List<BikeNova> lstBikeNova;
+
+    //criando o construtor
+    public RecyclerAdapterBikeNova(Context context, List<BikeNova> lstBikeNova) {
+        this.context = context;
+        this.lstBikeNova = lstBikeNova;
+    }
+
+
     @NonNull
+    //carrega a janela
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view;
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        view = inflater.inflate(R.layout.modelo_bikes_novas,parent,false);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -22,9 +43,10 @@ public class RecyclerAdapterBikeNova extends RecyclerView.Adapter<RecyclerAdapte
 
     }
 
+    //conta quantos itens tem na lista
     @Override
     public int getItemCount() {
-        return 0;
+        return lstBikeNova.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
