@@ -3,6 +3,7 @@ package br.com.etec.myapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -43,6 +44,13 @@ public class BikesNovasFragment extends Fragment {
         lstBikeNova.add(new BikeNova("bike7",R.drawable.bike7));
         lstBikeNova.add(new BikeNova("bike8",R.drawable.bike8));
         lstBikeNova.add(new BikeNova("bike9",R.drawable.bike9));
+
+        //carregando o adaptador
+        RecyclerAdapterBikeNova adapterBikeNova = new RecyclerAdapterBikeNova(getContext(),lstBikeNova);
+
+        idRecBikesNovas.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+        idRecBikesNovas.setAdapter(adapterBikeNova);
 
         return view;
     }
